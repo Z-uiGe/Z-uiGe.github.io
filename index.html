@@ -13,9 +13,9 @@
         }
 
         body {
-            background: conic-gradient(
-                red, orange, yellow, green, blue, indigo, violet, red
-            );
+            /* 加一层深色遮罩，把背景压暗，解决刺眼问题 */
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        conic-gradient(red, orange, yellow, green, blue, indigo, violet, red);
             min-height: 100vh;
             background-size: 200% 200%;
             animation: rotateBg 10s linear infinite;
@@ -34,7 +34,6 @@
             content: '';
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
             z-index: -1;
         }
 
@@ -115,9 +114,8 @@
             font-size: 16px;
         }
 
-        /* 罪歌吉祥物（三倍大） */
         .mascot-title {
-            font-size: 48px; /* 三倍大 */
+            font-size: 48px;
             text-align: center;
             margin-bottom: 20px;
             font-weight: bold;
@@ -239,13 +237,15 @@
     <div class="intro-text glassy">
         <div class="mascot-title">罪歌吉祥物</div>
         许文文：许文文 长的特别牛逼 身材也特别牛逼 交际也特别牛逼 闺蜜也特别牛逼<br>
-        烦烦：最可爱的人牛逼牛逼牛逼牛逼牛逼牛逼牛逼牛逼牛逼牛逼<br>
+        烦烦：最可爱的人牛逼牛逼牛逼牛逼牛逼牛逼牛逼牛逼牛逼<br>
         张泽鳞：是个人<br>
         晴天：我是晴天我的家人都被我砍死了<br>
         阴雨：我是最傻逼的<br>
         小敏：你的面子我的鞋垫子<br>
         皇帝：兄弟们！开武魂！！<br>
-        泽狗：喷词大神 ！！你令堂今晚不保
+        泽狗：喷词大神 ！！你令堂今晚不保<br>
+        片帧：神人来的<br>
+        涵涵：交际牛逼克拉斯
     </div>
 
     <div class="welcome-card glassy">
@@ -294,7 +294,6 @@
             <p>许文文</p>
             <p>风林</p>
             <p>云间雪</p>
-            <p>片帧</p>
             <p>遗忘</p>
             <button class="close-btn" onclick="closeModal()">关闭</button>
         </div>
