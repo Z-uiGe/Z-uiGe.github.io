@@ -113,19 +113,16 @@
         <h2>欢迎来到 罪歌 ZuiGe 官方站！</h2>
     </div>
 
-    <!-- 创建人内容 -->
     <div id="chuangjianren" class="content">
         <h2>创建人</h2>
         <p>皇帝</p>
     </div>
 
-    <!-- 图书馆内容 -->
     <div id="tushuguan" class="content">
         <h2>图书馆</h2>
         <p>暂无内容</p>
     </div>
 
-    <!-- 管理人内容 -->
     <div id="guanliren" class="content">
         <h2>管理人</h2>
         <p>李千雪</p>
@@ -139,16 +136,12 @@
         <p>遗忘</p>
     </div>
 
-    <script>
-        function show(id) {
-            // 隐藏所有内容
-            document.querySelectorAll('.content').forEach(el => {
-                el.classList.remove('active');
-            });
-            // 显示选中的内容
-            document.getElementById(id).classList.add('active');
-        }
-    </script>
+<script>
+function show(id) {
+  document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
