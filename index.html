@@ -13,13 +13,22 @@
         }
 
         body {
-            background-color: #f0ebe0;
-            color: #333;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b, #ff9068, #ff416c);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .top-bar {
-            background-color: #6b5b4f;
-            color: #fff;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
             padding: 12px 15px;
             display: flex;
             justify-content: space-between;
@@ -33,7 +42,8 @@
         }
 
         .nav {
-            background-color: #7a695c;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
@@ -44,16 +54,18 @@
             text-decoration: none;
             font-size: 15px;
             cursor: pointer;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
 
         .quote-box {
-            background-color: #7a695c;
-            color: #fff;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
             padding: 20px;
             margin: 15px;
-            border-radius: 3px;
+            border-radius: 10px;
             line-height: 1.7;
             font-size: 14px;
+            text-shadow: 0 0 5px rgba(255,255,255,0.3);
         }
 
         .img-box {
@@ -63,29 +75,31 @@
 
         .img-box img {
             width: 100%;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
         }
 
         .intro-text {
-            background: #7a695c;
-            color: #fff;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
             margin: 15px;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             line-height: 2;
             font-size: 15px;
+            text-shadow: 0 0 5px rgba(255,255,255,0.3);
         }
 
         .welcome-card {
-            background-color: #7a695c;
-            color: #fff;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
             margin: 15px;
             padding: 15px;
-            border-radius: 3px;
+            border-radius: 10px;
             text-align: center;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
 
-        /* 悬浮弹窗样式 */
         .modal {
             display: none;
             position: fixed;
@@ -93,39 +107,53 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
             z-index: 999;
             justify-content: center;
             align-items: center;
         }
 
         .modal-content {
-            background: #f0ebe0;
-            width: 85%;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
             padding: 25px;
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            box-shadow: 0 0 30px rgba(255,255,255,0.3);
         }
 
         .modal-content h2 {
-            color: #7a695c;
             margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.7);
         }
 
         .modal-content p {
             font-size: 17px;
             line-height: 1.8;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 10px 0;
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
         }
 
         .close-btn {
             margin-top: 20px;
-            background: #7a695c;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
             color: #fff;
             border: none;
             padding: 10px 25px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
         }
     </style>
 </head>
@@ -176,8 +204,22 @@
 
     <div class="modal" id="tushuguan">
         <div class="modal-content">
-            <h2>图书馆</h2>
-            <p>暂无内容</p>
+            <h2>图书馆（全部图片）</h2>
+            <img src="3.png.jpg">
+            <img src="100.png.jpg">
+            <img src="101.png.jpg">
+            <img src="102.png.jpg">
+            <img src="103.png.jpg">
+            <img src="104.png.jpg">
+            <img src="105.png.jpg">
+            <img src="106.png.jpg">
+            <img src="107.png.jpg">
+            <img src="108.png.jpg">
+            <img src="109.png.jpg">
+            <img src="110.png.jpg">
+            <img src="111.png.jpg">
+            <img src="112.png.jpg">
+            <img src="113.png.jpg">
             <button class="close-btn" onclick="closeModal()">关闭</button>
         </div>
     </div>
