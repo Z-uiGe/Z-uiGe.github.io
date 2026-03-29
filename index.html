@@ -66,6 +66,16 @@
             border-radius: 5px;
         }
 
+        .intro-text {
+            background: #7a695c;
+            color: #fff;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 5px;
+            line-height: 2;
+            font-size: 15px;
+        }
+
         .welcome-card {
             background-color: #7a695c;
             color: #fff;
@@ -75,16 +85,47 @@
             text-align: center;
         }
 
-        .content {
+        /* 悬浮弹窗样式 */
+        .modal {
             display: none;
-            padding: 20px;
-            text-align: center;
-            font-size: 18px;
-            line-height: 2;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
         }
 
-        .active {
-            display: block;
+        .modal-content {
+            background: #f0ebe0;
+            width: 85%;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .modal-content h2 {
+            color: #7a695c;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            background: #7a695c;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -96,9 +137,9 @@
     </div>
 
     <div class="nav">
-        <a onclick="show('chuangjianren')">创建人</a>
-        <a onclick="show('tushuguan')">图书馆</a>
-        <a onclick="show('guanliren')">管理人</a>
+        <a onclick="openModal('chuangjianren')">创建人</a>
+        <a onclick="openModal('tushuguan')">图书馆</a>
+        <a onclick="openModal('guanliren')">管理人</a>
     </div>
 
     <div class="quote-box">
@@ -106,40 +147,65 @@
     </div>
 
     <div class="img-box">
-        <img src="100.png.jpg" alt="罪歌封面">
+        <img src="101.png.jpg" alt="罪歌封面">
+    </div>
+
+    <div class="intro-text">
+        许文文：许文文 长的特别牛逼 身材也特别牛逼 交际也特别牛逼 闺蜜也特别牛逼<br>
+        烦烦：最可爱的人牛逼牛逼牛逼牛逼牛逼牛逼牛逼牛逼牛逼牛逼<br>
+        张泽鳞：是个人<br>
+        晴天：我是晴天我的家人都被我砍死了<br>
+        阴雨：我是最傻逼的<br>
+        小敏：你的面子我的鞋垫子<br>
+        皇帝：兄弟们！开武魂！！<br>
+        泽狗：喷词大神 ！！你令堂今晚不保
     </div>
 
     <div class="welcome-card">
         <h2>欢迎来到 罪歌 ZuiGe 官方站！</h2>
     </div>
 
-    <div id="chuangjianren" class="content">
-        <h2>创建人</h2>
-        <p>皇帝</p>
+    <!-- 悬浮弹窗 -->
+    <div class="modal" id="chuangjianren">
+        <div class="modal-content">
+            <h2>创建人</h2>
+            <p>皇帝</p>
+            <button class="close-btn" onclick="closeModal()">关闭</button>
+        </div>
     </div>
 
-    <div id="tushuguan" class="content">
-        <h2>图书馆</h2>
-        <p>暂无内容</p>
+    <div class="modal" id="tushuguan">
+        <div class="modal-content">
+            <h2>图书馆</h2>
+            <p>暂无内容</p>
+            <button class="close-btn" onclick="closeModal()">关闭</button>
+        </div>
     </div>
 
-    <div id="guanliren" class="content">
-        <h2>管理人</h2>
-        <p>李千雪</p>
-        <p>泽狗</p>
-        <p>法天</p>
-        <p>小敏</p>
-        <p>许文文</p>
-        <p>风林</p>
-        <p>云间雪</p>
-        <p>片帧</p>
-        <p>遗忘</p>
+    <div class="modal" id="guanliren">
+        <div class="modal-content">
+            <h2>管理人</h2>
+            <p>李千雪</p>
+            <p>泽狗</p>
+            <p>法天</p>
+            <p>小敏</p>
+            <p>许文文</p>
+            <p>风林</p>
+            <p>云间雪</p>
+            <p>片帧</p>
+            <p>遗忘</p>
+            <button class="close-btn" onclick="closeModal()">关闭</button>
+        </div>
     </div>
 
 <script>
-function show(id) {
-  document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+function closeModal() {
+  document.querySelectorAll('.modal').forEach(el => {
+    el.style.display = "none";
+  });
 }
 </script>
 
