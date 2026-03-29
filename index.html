@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罪歌 - ZuiGe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #f0ebe0;
+            color: #333;
+        }
+
+        .top-bar {
+            background-color: #6b5b4f;
+            color: #fff;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .top-bar .title {
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: #7a695c;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .quote-box {
+            background-color: #7a695c;
+            color: #fff;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 3px;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .img-box {
+            margin: 15px;
+            text-align: center;
+        }
+
+        .img-box img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .welcome-card {
+            background-color: #7a695c;
+            color: #fff;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>×</span>
+        <div class="title">主页 - 罪歌 ZuiGe 官方站</div>
+    </div>
+
+    <div class="nav">
+        <a onclick="show('chuangjianren')">创建人</a>
+        <a onclick="show('tushuguan')">图书馆</a>
+        <a onclick="show('guanliren')">管理人</a>
+    </div>
+
+    <div class="quote-box">
+        “假如你不小心在错误的地方从现实中切出，你最终将坠入罪歌领域，这里只有无尽的寂静与深红，令人窒息的孤独，还有在黑暗中低语的未知存在。倘若你听见有什么东西在附近徘徊，愿你保持清醒，因为它一定也听见了你的声音……”
+    </div>
+
+    <div class="img-box">
+        <img src="100.png.jpg" alt="罪歌封面">
+    </div>
+
+    <div class="welcome-card">
+        <h2>欢迎来到 罪歌 ZuiGe 官方站！</h2>
+    </div>
+
+    <!-- 创建人内容 -->
+    <div id="chuangjianren" class="content">
+        <h2>创建人</h2>
+        <p>皇帝</p>
+    </div>
+
+    <!-- 图书馆内容 -->
+    <div id="tushuguan" class="content">
+        <h2>图书馆</h2>
+        <p>暂无内容</p>
+    </div>
+
+    <!-- 管理人内容 -->
+    <div id="guanliren" class="content">
+        <h2>管理人</h2>
+        <p>李千雪</p>
+        <p>泽狗</p>
+        <p>法天</p>
+        <p>小敏</p>
+        <p>许文文</p>
+        <p>风林</p>
+        <p>云间雪</p>
+        <p>片帧</p>
+        <p>遗忘</p>
+    </div>
+
+    <script>
+        function show(id) {
+            // 隐藏所有内容
+            document.querySelectorAll('.content').forEach(el => {
+                el.classList.remove('active');
+            });
+            // 显示选中的内容
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
